@@ -19,6 +19,11 @@
     android:title="@string/ota_viper_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen
+        android:key="viper_header"
+        android:enabled="false"
+        android:layout="@layout/about_viper_header_ota" />
+
     <PreferenceCategory
         android:title="@string/ota_category">
 
