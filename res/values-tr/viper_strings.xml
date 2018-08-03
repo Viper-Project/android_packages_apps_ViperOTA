@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2018 ViperOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- OTA -->
+    <string name="ota_viper_title">Güncellemeler</string>
+    <string name="ota_viper_summary">Cihazınızın güncellemelerini ve bağlantılarını kontrol edin</string>
+
+    <!-- Categories -->
+    <string name="ota_category">Güncellemeler</string>
+    <string name="links_category">Bağlantılar</string>
+
+    <!-- ROM info -->
+    <string name="latest_version">En son sürüm: %1$s</string>
+    <string name="unknown">Bilinmiyor</string>
+    <string name="system_uptodate">Sisteminiz güncel</string>
+    <string name="maintainer_title">Sorumlu</string>
+    <string name="maintainer_unknown">Resmi sorumlu yok</string>
+    <string name="changelog_title">Değişiklikler</string>
+    <string name="changelog_summary">Değişiklikleri görüntüle</string>
+    <string name="download_title">En son yapıyı indir</string>
+    <string name="download_summary">İndirme sayfasını ziyaret et</string>
+    <string name="gapps_title">Gapps indir</string>
+    <string name="gapps_summary">Google uygulamaları indirme sayfasını ziyaret et</string>
+    <string name="forum_title">Forum</string>
+    <string name="forum_summary">En son tartışmaları görüntüle</string>
+    <string name="paypal_title">Bağış yap</string>
+    <string name="paypal_summary">Cihaz geliştiricisini destekle</string>
+    <string name="telegram_title">Telegram</string>
+    <string name="telegram_summary">Telegram son tartışmalarına katıl</string>
+    <string name="firmware_title">Uyumlu ürün yazılımı indir</string>
+    <string name="firmware_summary">Ürün yazılımı indirme sayfasını ziyaret et</string>
+    <string name="modem_title">Uyumlu modem indir</string>
+    <string name="modem_summary">Modem indirme sayfasını ziyaret et</string>
+    <string name="bootloader_title">Uyumlu ön yükleyici indir</string>
+    <string name="bootloader_summary">Ön yükleyici indirme sayfasını ziyaret et</string>
+    <string name="recovery_title">Uyumlu kurtarma sürümü indir</string>
+    <string name="recovery_summary">Kurtarma sürümü indirme sayfasını ziyaret et</string>
+
+    <!-- Check update -->
+    <string name="check_update_title">Güncellemeleri kontrol et</string>
+    <string name="last_check_summary">Son kontrol: %1$s</string>
+    <string name="last_check_never">Asla</string>
+    <string name="check_update_failed">Güncelleme kontrol edilemiyor</string>
+    <string name="no_update_available">Güncelleme mevcut değil</string>
+
+    <!-- Update interval -->
+    <string name="interval_title">Otomatik güncelleme aralığı</string>
+    <string name="interval_entry_disable">Devre dışı</string>
+    <string name="interval_entry_15m">Her 15 dakikada</string>
+    <string name="interval_entry_30m">Her 30 dakikada</string>
+    <string name="interval_entry_1h">Her saat</string>
+    <string name="interval_entry_12h">Her 12 saatte</string>
+    <string name="interval_entry_24h">Her 24 saatte</string>
+    <string name="interval_entry_1m">Her 1 dakikada (Sadece test için)</string>
+    <string name="autoupdate_enabled">Otomatik güncelleme etkin</string>
+    <string name="autoupdate_disabled">Otomatik güncelleme devre dışı</string>
+
+    <!-- Notification -->
+    <string name="notification_title">Güncellemeler</string>
+    <string name="notification_message">Yeni sistem güncellemesi mevcut!</string>
+
+    <!-- Dialog -->
+    <string name="dialog_message">ROM güncellemeleri kontrol ediliyor, lütfen bekleyin…</string>
+</resources>
