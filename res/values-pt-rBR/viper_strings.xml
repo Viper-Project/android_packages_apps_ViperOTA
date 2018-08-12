@@ -32,7 +32,7 @@
     <string name="maintainer_unknown">Sem mantenedor oficial</string>
     <string name="changelog_title">Changelog</string>
     <string name="changelog_summary">Ver changelog</string>
-    <string name="download_title">Baixar atualizar mais recente</string>
+    <string name="download_title">Baixar a mais recente</string>
     <string name="download_summary">Visitar a pagina de download</string>
     <string name="gapps_title">Download gapps</string>
     <string name="gapps_summary">Visitar a pagina de download do gapps</string>
