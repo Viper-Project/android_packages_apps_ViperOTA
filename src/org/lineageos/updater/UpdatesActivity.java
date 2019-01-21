@@ -27,6 +27,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.SystemProperties;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.Snackbar;
@@ -116,17 +117,8 @@ public class UpdatesActivity extends UpdatesListActivity {
 
         TextView headerTitle = (TextView) findViewById(R.id.header_title);
         headerTitle.setText(getString(R.string.header_title_text,
-                BuildInfoUtils.getBuildVersion()));
-
-        updateLastCheckedString();
-
-        TextView headerBuildVersion = (TextView) findViewById(R.id.header_build_version);
-        headerBuildVersion.setText(
-                getString(R.string.header_android_version, Build.VERSION.RELEASE));
-
-        TextView headerBuildDate = (TextView) findViewById(R.id.header_build_date);
-        headerBuildDate.setText(StringGenerator.getDateLocalizedUTC(this,
-                DateFormat.LONG, BuildInfoUtils.getBuildDateTimestamp()));
+                    SystemProperties.get(Constants.PROP_BUILD_VERSION) + " | " +
+                    SystemProperties.get(Constants.PROP_DEVICE)));
 
         // Switch between header title and appbar title minimizing overlaps
         final CollapsingToolbarLayout collapsingToolbar =
@@ -292,7 +284,7 @@ public class UpdatesActivity extends UpdatesListActivity {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
             long millis = System.currentTimeMillis();
             preferences.edit().putLong(Constants.PREF_LAST_UPDATE_CHECK, millis).apply();
-            updateLastCheckedString();
+            //updateLastCheckedString();
             if (json.exists() && Utils.isUpdateCheckEnabled(this) &&
                     Utils.checkForNewUpdates(json, jsonNew)) {
                 UpdatesCheckReceiver.updateRepeatingUpdatesCheck(this);
@@ -356,7 +348,7 @@ public class UpdatesActivity extends UpdatesListActivity {
         downloadClient.start();
     }
 
-    private void updateLastCheckedString() {
+    /*private void updateLastCheckedString() {
         final SharedPreferences preferences =
                 PreferenceManager.getDefaultSharedPreferences(this);
         long lastCheck = preferences.getLong(Constants.PREF_LAST_UPDATE_CHECK, -1) / 1000;
@@ -365,7 +357,7 @@ public class UpdatesActivity extends UpdatesListActivity {
                 StringGenerator.getTimeLocalized(this, lastCheck));
         TextView headerLastCheck = (TextView) findViewById(R.id.header_last_check);
         headerLastCheck.setText(lastCheckString);
-    }
+    }*/
 
     private void handleDownloadStatusChange(String downloadId) {
         UpdateInfo update = mUpdaterService.getUpdaterController().getUpdate(downloadId);
