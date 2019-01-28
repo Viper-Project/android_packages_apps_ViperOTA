@@ -116,9 +116,11 @@ public class UpdatesActivity extends UpdatesListActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView headerTitle = (TextView) findViewById(R.id.header_title);
-        headerTitle.setText(getString(R.string.header_title_text,
-                    SystemProperties.get(Constants.PROP_BUILD_VERSION) + " | " +
-                    SystemProperties.get(Constants.PROP_DEVICE)));
+        headerTitle.setText(getString(R.string.header_title_text));
+
+        TextView headerVersion = (TextView) findViewById(R.id.header_version);
+        headerVersion.setText(SystemProperties.get(Constants.PROP_BUILD_VERSION) + " | " +
+                    SystemProperties.get(Constants.PROP_DEVICE));
 
         // Switch between header title and appbar title minimizing overlaps
         final CollapsingToolbarLayout collapsingToolbar =
@@ -252,6 +254,8 @@ public class UpdatesActivity extends UpdatesListActivity {
         if (sortedUpdates.isEmpty()) {
             findViewById(R.id.no_new_updates_view).setVisibility(View.VISIBLE);
             findViewById(R.id.recycler_view).setVisibility(View.GONE);
+            ((TextView) findViewById(R.id.header_update_status)).setText(R.string.header_updates_no_update);
+            findViewById(R.id.header_update_release_date).setVisibility(View.GONE);
         } else {
             findViewById(R.id.no_new_updates_view).setVisibility(View.GONE);
             findViewById(R.id.recycler_view).setVisibility(View.VISIBLE);
@@ -259,6 +263,10 @@ public class UpdatesActivity extends UpdatesListActivity {
             for (UpdateInfo update : sortedUpdates) {
                 updateIds.add(update.getDownloadId());
             }
+            ((TextView) findViewById(R.id.header_update_status)).setText(R.string.header_updates_new_build);
+            findViewById(R.id.header_update_release_date).setVisibility(View.VISIBLE);
+            /* Example till this is working */
+            ((TextView) findViewById(R.id.header_update_release_date)).setText("February 29, 2019");
             mAdapter.setData(updateIds);
             mAdapter.notifyDataSetChanged();
         }
@@ -284,7 +292,6 @@ public class UpdatesActivity extends UpdatesListActivity {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
             long millis = System.currentTimeMillis();
             preferences.edit().putLong(Constants.PREF_LAST_UPDATE_CHECK, millis).apply();
-            //updateLastCheckedString();
             if (json.exists() && Utils.isUpdateCheckEnabled(this) &&
                     Utils.checkForNewUpdates(json, jsonNew)) {
                 UpdatesCheckReceiver.updateRepeatingUpdatesCheck(this);
@@ -348,17 +355,6 @@ public class UpdatesActivity extends UpdatesListActivity {
         downloadClient.start();
     }
 
-    /*private void updateLastCheckedString() {
-        final SharedPreferences preferences =
-                PreferenceManager.getDefaultSharedPreferences(this);
-        long lastCheck = preferences.getLong(Constants.PREF_LAST_UPDATE_CHECK, -1) / 1000;
-        String lastCheckString = getString(R.string.header_last_updates_check,
-                StringGenerator.getDateLocalized(this, DateFormat.LONG, lastCheck),
-                StringGenerator.getTimeLocalized(this, lastCheck));
-        TextView headerLastCheck = (TextView) findViewById(R.id.header_last_check);
-        headerLastCheck.setText(lastCheckString);
-    }*/
-
     private void handleDownloadStatusChange(String downloadId) {
         UpdateInfo update = mUpdaterService.getUpdaterController().getUpdate(downloadId);
         switch (update.getStatus()) {
@@ -394,6 +390,19 @@ public class UpdatesActivity extends UpdatesListActivity {
         if (mRefreshIconView != null) {
             mRefreshAnimation.setRepeatCount(0);
             mRefreshIconView.setEnabled(true);
+        }
+    }
+
+    public void updateheaderInfoString(boolean newUpdateInfo) {
+        TextView headerUpdateStatus = (TextView) findViewById(R.id.header_update_status);
+        TextView headerUpdateDate = (TextView) findViewById(R.id.header_update_release_date);
+        if (newUpdateInfo) {
+            headerUpdateStatus.setText(R.string.header_updates_new_build);
+            headerUpdateDate.setVisibility(View.VISIBLE);
+            headerUpdateDate.setText("DateGoesHere");
+        } else {
+            headerUpdateStatus.setText(R.string.header_updates_no_update);
+            headerUpdateDate.setVisibility(View.GONE);
         }
     }
 
