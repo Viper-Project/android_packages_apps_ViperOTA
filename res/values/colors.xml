@@ -7,4 +7,5 @@
     <color name="inverted">#212121</color>
     <color name="update_background">#f5f5f5</color>
     <color name="ic_background">#333333</color>
+    <color name="cardbackground">@*android:color/venom_cat_background</color>
 </resources>
