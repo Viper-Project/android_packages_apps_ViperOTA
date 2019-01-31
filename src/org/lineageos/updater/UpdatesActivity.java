@@ -266,7 +266,8 @@ public class UpdatesActivity extends UpdatesListActivity {
             ((TextView) findViewById(R.id.header_update_status)).setText(R.string.header_updates_new_build);
             findViewById(R.id.header_update_release_date).setVisibility(View.VISIBLE);
             /* Example till this is working */
-            ((TextView) findViewById(R.id.header_update_release_date)).setText("February 29, 2019");
+            ((TextView) findViewById(R.id.header_update_release_date)).setText(StringGenerator.getDateLocalizedUTC(this,
+                DateFormat.MEDIUM, BuildInfoUtils.getBuildDateTimestamp()));
             mAdapter.setData(updateIds);
             mAdapter.notifyDataSetChanged();
         }
