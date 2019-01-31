@@ -24,6 +24,7 @@
                 android:alpha="0.87"
                 android:drawablePadding="8dp"
                 android:maxLines="1"
+                android:paddingTop="8sp"
                 android:paddingBottom="8sp"
                 android:textColor="?android:attr/textColorPrimary"
                 android:textSize="16sp"
@@ -80,7 +81,7 @@
             android:id="@+id/img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="108dp"
             android:visibility="invisible"/>
 
         <Button
