@@ -95,7 +95,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="@*android:color/accent_device_default_light"
                 app:layout_collapseMode="pin" />
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/list_no_updates"
-            android:textColor="?android:textColorSecondary" />
+            android:textColor="@*android:color/accent_device_default_light" />
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.v7.widget.RecyclerView
