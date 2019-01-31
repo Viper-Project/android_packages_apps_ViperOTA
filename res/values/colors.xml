@@ -9,4 +9,7 @@
     <color name="ic_background">#333333</color>
     <color name="navigation_bar_color">#edebeb</color>
     <color name="cardbackground">@android:color/white</color>
+    <color name="action_bar_icon_color">#ff000000</color>
+    <color name="menu_bg">@android:color/white</color>
+    <color name="text_color_pri">@color/action_bar_icon_color</color>
 </resources>

@@ -46,7 +46,7 @@
                     android:alpha="0.9"
                     android:letterSpacing="0.08"
                     android:textAllCaps="false"
-                    android:textColor="?android:attr/textColorPrimary"
+                    android:textColor="@color/text_color_pri"
                     android:textSize="32sp" />
 
                 <TextView
@@ -60,7 +60,7 @@
                     android:letterSpacing="0.08"
                     android:textAllCaps="true"
                     android:layout_below="@id/header_title"
-                    android:textColor="?android:attr/textColorPrimary"
+                    android:textColor="@color/text_color_pri"
                     android:textSize="20sp" />
 
                 <TextView
@@ -72,7 +72,7 @@
                     android:paddingTop="10dp"
                     android:alpha="0.64"
                     android:letterSpacing="0.08"
-                    android:textColor="?android:attr/textColorPrimary"
+                    android:textColor="@color/text_color_pri"
                     android:layout_below="@id/header_version"
                     android:textSize="16sp" />
 
@@ -86,7 +86,7 @@
                     android:alpha="0.64"
                     android:letterSpacing="0.08"
                     android:layout_below="@id/header_update_status"
-                    android:textColor="?android:attr/textColorPrimary"
+                    android:textColor="@color/text_color_pri"
                     android:textSize="16sp" />
 
             </RelativeLayout>

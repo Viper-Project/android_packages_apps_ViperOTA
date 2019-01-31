@@ -26,7 +26,7 @@
                 android:maxLines="1"
                 android:paddingTop="8sp"
                 android:paddingBottom="8sp"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="@color/text_color_pri"
                 android:textSize="16sp"
                 tools:text="ViperOS 6.1" />
 

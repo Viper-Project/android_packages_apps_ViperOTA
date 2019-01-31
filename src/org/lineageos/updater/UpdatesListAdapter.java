@@ -435,7 +435,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             String message = resources.getString(R.string.dialog_battery_low_message_pct,
                     resources.getInteger(R.integer.battery_ok_percentage_discharging),
                     resources.getInteger(R.integer.battery_ok_percentage_charging));
-            return new AlertDialog.Builder(mActivity)
+            return new AlertDialog.Builder(mActivity, R.style.MyAlertDialogStyle)
                     .setTitle(R.string.dialog_battery_low_title)
                     .setMessage(message)
                     .setPositiveButton(android.R.string.ok, null);
@@ -467,7 +467,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
     }
 
     private AlertDialog.Builder getCancelInstallationDialog() {
-        return new AlertDialog.Builder(mActivity)
+        return new AlertDialog.Builder(mActivity, R.style.MyAlertDialogStyle)
                 .setMessage(R.string.cancel_installation_dialog_message)
                 .setPositiveButton(android.R.string.ok,
                         (dialog, which) -> {
