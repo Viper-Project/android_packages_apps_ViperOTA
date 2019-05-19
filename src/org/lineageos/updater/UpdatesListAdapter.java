@@ -248,8 +248,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
         String buildDate = StringGenerator.getDateLocalizedUTC(mActivity,
                 DateFormat.LONG, update.getTimestamp());
-        String buildVersion = mActivity.getString(R.string.list_build_version,
-                update.getVersion());
+        String buildVersion = update.getName();
         viewHolder.mBuildDate.setText(buildDate);
         viewHolder.mBuildVersion.setText(buildVersion);
         viewHolder.mBuildVersion.setCompoundDrawables(null, null, null, null);
@@ -453,13 +452,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             return null;
         }
 
-        String buildDate = StringGenerator.getDateLocalizedUTC(mActivity,
-                DateFormat.MEDIUM, update.getTimestamp());
-        String buildInfoText = mActivity.getString(R.string.list_build_version_date,
-                BuildInfoUtils.getBuildVersion(), buildDate);
         return new AlertDialog.Builder(mActivity)
                 .setTitle(R.string.apply_update_dialog_title)
-                .setMessage(mActivity.getString(resId, buildInfoText,
+                .setMessage(mActivity.getString(resId, update.getName(),
                         mActivity.getString(android.R.string.ok)))
                 .setPositiveButton(android.R.string.ok,
                         (dialog, which) -> Utils.triggerUpdate(mActivity, downloadId))
