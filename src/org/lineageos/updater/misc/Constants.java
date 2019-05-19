@@ -48,6 +48,7 @@ public final class Constants {
 
     public static final String PREF_INSTALL_OLD_TIMESTAMP = "install_old_timestamp";
     public static final String PREF_INSTALL_NEW_TIMESTAMP = "install_new_timestamp";
+    public static final String PREF_INSTALL_NEW_FILE_NAME = "install_new_file_name";
     public static final String PREF_INSTALL_PACKAGE_PATH = "install_package_path";
     public static final String PREF_INSTALL_AGAIN = "install_again";
     public static final String PREF_INSTALL_NOTIFIED = "install_notified";
